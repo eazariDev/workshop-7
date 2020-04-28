@@ -6,7 +6,6 @@ public class testClass {
 
         try{
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()){
-                System.out.println(info.getClassName());
                 if ( "nimbus".equals(info.getClassName())){
                     UIManager.setLookAndFeel(info.getClassName());
                     break;

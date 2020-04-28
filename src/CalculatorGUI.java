@@ -9,49 +9,43 @@ public class CalculatorGUI {
 
         calcFrame = new JFrame();
         calcFrame.setTitle("Calculator");
-        calcFrame.setSize(200,200);
+        calcFrame.setSize(300,300);
         calcFrame.setLocation(200,200);
         calcFrame.setLayout(new BorderLayout());
         calcFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel keyboardPanel = new JPanel();
-        keyboardPanel.setLayout(new GridLayout(1,2,5,5));
-
-        JPanel text = new JPanel(new GridLayout(1,1,5,5));
-        text.setSize(225,75);
-        JTextArea display = new JTextArea(1,25);
+        JPanel keyboardPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JTextArea display = new JTextArea(2,20);
         display.setEditable(false);
         display.setFont(new Font ("Arial" , 14, 14));
-        display.setSize( 220,25);
-        JPanel but = new JPanel(new GridLayout(1,1,5,5));
-        JButton clearAll = new JButton("AC");
         JScrollPane scrollPane = new JScrollPane(display);
-        clearAll.setSize(new Dimension(35,28));
+
+        JPanel but = new JPanel(new GridLayout(1,1,5,5));
+        JButton clearAll = new JButton("  AC  ");
 
         JPanel buttonPanel = new JPanel(new GridLayout(4,4,5,5));
+        buttonPanel.add(new JButton("7"));
+        buttonPanel.add(new JButton("8"));
+        buttonPanel.add(new JButton("9"));
+        buttonPanel.add(new JButton("/"));
+        buttonPanel.add(new JButton("4"));
+        buttonPanel.add(new JButton("5"));
+        buttonPanel.add(new JButton("6"));
+        buttonPanel.add(new JButton("*"));
         buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
-        buttonPanel.add(new JButton("1"));
+        buttonPanel.add(new JButton("2"));
+        buttonPanel.add(new JButton("3"));
+        buttonPanel.add(new JButton("-"));
+        buttonPanel.add(new JButton("0"));
+        buttonPanel.add(new JButton("."));
+        buttonPanel.add(new JButton("="));
+        buttonPanel.add(new JButton("+"));
 
-        text.add(display);
-        but.add(clearAll);
         keyboardPanel.add(display);
         keyboardPanel.add(clearAll);
         calcFrame.add(keyboardPanel,BorderLayout.NORTH);
         calcFrame.add(buttonPanel,BorderLayout.CENTER);
+
     }
 
 
